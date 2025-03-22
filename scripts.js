@@ -1,58 +1,47 @@
-// Object JS
+// Масивы и псевдомасивы
 
-'use strict';
+'use strict'
 
-// const obj = new Object(); это редко используемый вариант
+const arr = [1, 2, 3, 4, 5];
+arr.sort(compareNum);
+console.log(arr);
 
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function () {
-        console.log('Test');
-
-    }
-};
-
-options.makeTest();
-
-const { border, bg } = options.colors;
-console.log(border);
+function compareNum(a, b) {
+    return a - b;
+}
 
 
-// посчитать колличетсво свойств в объекте
+// arr[99] = 0;
+// console.log(arr.length);
+// console.log(arr);
 
-// console.log(Object.keys(options).length);
+// метод перебора массива
+arr.forEach(function (item, i, arr) {
+    console.log(`${i}: ${item} внутри массива ${arr}`);
+});
 
 
-// // достучаться до свойста из объекта
-// console.log(options.colors.border);
+// // убираем последний элемент в массиве
+// arr.pop();
 
+// // добавляем последний элемент в массиве
+// arr.push(10)
 
-// // удалить свойство из объекта
-// delete options.name;
+// console.log(arr);
 
-// console.log(options);
-
-// // перебрать все свойтсва в объекте и добавили счетчик этих свойств
-
-// let counter = 0;
-
-// for (let key in options) {
-//     if (typeof (options[key]) === 'object') {
-//         for (let i in options[key]) {
-//             console.log(`Свойство ${i}, имеет значение ${options[key][i]} `);
-//             counter++;
-//         }
-
-//     } else {
-//         console.log(`Свойство ${key}, имеет значение ${options[key]} `);
-//         counter++
-//     }
+// // перебираем каждый элемент массива
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
 // }
 
-// console.log(counter);
+// другая конструкция перебора 'value' = любое другое название
+for (let value of arr) {
+    console.log(value);
+}
+
+const str = prompt("", "");
+const products = str.split(", ");
+
+// console.log(products);
+products.sort();
+console.log(products.join('; '));
