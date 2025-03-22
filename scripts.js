@@ -164,7 +164,7 @@ function findMaxNumber(numOne, numTwo, numThreе, numFour) {
 
 console.log(findMaxNumber(-4, -20000, -123, -442));
 
-// -------------------- 5 задача -------------------
+// -------------------- 5 задача ------------------- НЕ РЕШЕНА
 
 function numbersFibonacci(num) {
     if (typeof (num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
