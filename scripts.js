@@ -163,3 +163,32 @@ function findMaxNumber(numOne, numTwo, numThreе, numFour) {
 }
 
 console.log(findMaxNumber(-4, -20000, -123, -442));
+
+// -------------------- 5 задача -------------------
+
+function numbersFibonacci(num) {
+    if (typeof (num) !== 'number' || num <= 0 || !Number.isInteger(num)) {
+        return '';
+    }
+
+    let result = '';
+    let first = 0;
+    let second = 1;
+
+    for (let i = 0; i < num; i++) {
+        if (i + 1 === num) {
+            result += `${first}`;
+            // Без пробела в конце
+        } else {
+            result += `${first} `;
+        }
+
+        let third = first + second;
+        first = second;
+        second = third;
+    }
+
+    return result;
+}
+
+console.log(numbersFibonacci(1));
